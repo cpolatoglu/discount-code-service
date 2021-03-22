@@ -1,3 +1,16 @@
+# Build files
+/target
+
+# IntelliJ
+.idea
+.iml
+
+# Mac OS
+.DS*
+
+# JENV
+.java-version
+
 # Compiled class file
 *.class
 
