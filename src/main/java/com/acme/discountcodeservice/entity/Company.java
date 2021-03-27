@@ -1,4 +1,4 @@
-package com.acme.discountcodeservice.entities;
+package com.acme.discountcodeservice.entity;
 
 import lombok.Data;
 
