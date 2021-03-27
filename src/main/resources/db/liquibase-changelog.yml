@@ -2,3 +2,6 @@ databaseChangeLog:
   - include:
       file: changelog/001-company-table.yml
       relativeToChangelogFile: true
+  - include:
+      file: changelog/002-discount-code-table.yml
+      relativeToChangelogFile: true

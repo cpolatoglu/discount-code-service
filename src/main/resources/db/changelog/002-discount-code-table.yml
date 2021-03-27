@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: '002'
+      author: caglar.polatoglu
+      changes:
+        - createTable:
+            tableName: discount_code
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    unique: true
+              - column:
+                  name: code
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: available
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: company_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_dicount_company
+                    references: company(id)
