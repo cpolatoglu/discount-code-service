@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -24,7 +24,8 @@ public class GeneratorControllerTest {
         request.setNumberOfCodes(20);
         request.setPercentage(false);
 
-        HttpStatus status = this.template.postForEntity("/generate", new HttpEntity<>(request), Void.class).getStatusCode();
-        assertThat(status.is2xxSuccessful(), is(true));
+        ResponseEntity<String[]> responseEntity = template.postForEntity("/generate", new HttpEntity<>(request), String[].class);
+        assertThat(responseEntity.getStatusCode().is2xxSuccessful(), is(true));
+        assertThat(responseEntity.getBody().length, is(20));
     }
 }
