@@ -2,3 +2,15 @@ server:
   port: 18080
   servlet:
     contextPath: /discount-code-service
+
+spring:
+  liquibase:
+    change-log: classpath:db/liquibase-changelog.yml
+  h2:
+    console:
+      enabled: true
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:discountcodedb
+    username: sa
+    password: sa
