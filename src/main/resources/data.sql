@@ -1,0 +1,1 @@
+INSERT INTO company (id, company_name, website, contact_info) VALUES (1, 'ACME Clothes', 'https://acme.se', 'info@acme.se');
