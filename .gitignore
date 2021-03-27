@@ -3,7 +3,7 @@
 
 # IntelliJ
 .idea
-.iml
++*.iml
 
 # Mac OS
 .DS*
