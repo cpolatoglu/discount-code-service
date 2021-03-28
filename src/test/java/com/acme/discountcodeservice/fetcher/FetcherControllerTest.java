@@ -30,5 +30,6 @@ public class FetcherControllerTest {
         ResponseEntity<String> responseEntity = template.postForEntity("/fetch", new HttpEntity<>(request), String.class);
         assertThat(responseEntity.getStatusCode().is2xxSuccessful(), is(true));
         assertThat(responseEntity.getBody(), not(emptyOrNullString()));
+        assertThat(responseEntity.getBody().length(), is(10));
     }
 }
