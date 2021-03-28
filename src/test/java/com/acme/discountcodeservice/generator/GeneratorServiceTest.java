@@ -28,7 +28,7 @@ class GeneratorServiceTest {
     @Test
     void testCodeGeneration() {
         when(repository.saveAll(any())).thenReturn(null);
-        GeneratorRequest request = new GeneratorRequest();
+        GenerateRequest request = new GenerateRequest();
         request.setDiscountAmount(100);
         request.setNumberOfCodes(20);
         request.setPercentage(false);

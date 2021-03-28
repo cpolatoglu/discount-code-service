@@ -19,7 +19,7 @@ class GeneratorControllerTest {
 
     @Test
     void testGeneratorController() {
-        GeneratorRequest request = new GeneratorRequest();
+        GenerateRequest request = new GenerateRequest();
         request.setCompanyId(1);
         request.setDiscountAmount(100);
         request.setNumberOfCodes(20);
