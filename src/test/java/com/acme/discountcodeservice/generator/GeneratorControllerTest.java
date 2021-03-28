@@ -12,7 +12,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class GeneratorControllerTest {
+class GeneratorControllerTest {
 
     @Autowired
     private TestRestTemplate template;

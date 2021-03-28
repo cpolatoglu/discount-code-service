@@ -16,7 +16,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class GeneratorServiceTest {
+class GeneratorServiceTest {
 
     @Mock
     DiscountCodeRepository repository;
@@ -26,7 +26,7 @@ public class GeneratorServiceTest {
     GeneratorService codeGeneratorService;
 
     @Test
-    public void testCodeGeneration() {
+    void testCodeGeneration() {
         when(repository.saveAll(any())).thenReturn(null);
         GeneratorRequest request = new GeneratorRequest();
         request.setDiscountAmount(100);

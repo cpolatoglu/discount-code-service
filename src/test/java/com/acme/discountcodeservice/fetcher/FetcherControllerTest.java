@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class FetcherControllerTest {
+class FetcherControllerTest {
 
     @Autowired
     private TestRestTemplate template;

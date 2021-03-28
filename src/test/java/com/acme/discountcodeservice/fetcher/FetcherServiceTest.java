@@ -17,7 +17,7 @@ import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class FetcherServiceTest {
+class FetcherServiceTest {
 
     @Mock
     DiscountCodeRepository discountCodeRepository;
@@ -27,7 +27,7 @@ public class FetcherServiceTest {
     FetcherService discountCodeFetcherService;
 
     @Test
-    public void testFetchDiscountCode (){
+    void testFetchDiscountCode (){
         FetchRequest request = new FetchRequest();
         request.setCompanyId(1);
         request.setFirstName("Will E.");
@@ -48,7 +48,7 @@ public class FetcherServiceTest {
     }
 
     @Test
-    public void testFetchDiscountCodeNotAvailable (){
+    void testFetchDiscountCodeNotAvailable (){
         FetchRequest request = new FetchRequest();
         request.setCompanyId(1);
         request.setFirstName("Will E.");
