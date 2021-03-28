@@ -46,4 +46,18 @@ public class FetcherServiceTest {
         assertThat(string.length(), is(10));
         assertThat(discountCode.isAvailable(), is(false));
     }
+
+    @Test
+    public void testFetchDiscountCodeNotAvailable (){
+        FetchRequest request = new FetchRequest();
+        request.setCompanyId(1);
+        request.setFirstName("Will E.");
+        request.setLastName("Coyote");
+        request.setEmail("will.e.coyote@looneytunes.com");
+        request.setPhone("12345678");
+
+        when(discountCodeRepository.findFirstByCompanyIdAndAvailableTrue(anyLong())).thenReturn(null);
+        String string = discountCodeFetcherService.fetchDiscountCode(request);
+        assertThat(string, is(emptyOrNullString()));
+    }
 }
