@@ -5,3 +5,6 @@ databaseChangeLog:
   - include:
       file: changelog/002-discount-code-table.yml
       relativeToChangelogFile: true
+  - include:
+      file: changelog/003-customer-table.yml
+      relativeToChangelogFile: true
