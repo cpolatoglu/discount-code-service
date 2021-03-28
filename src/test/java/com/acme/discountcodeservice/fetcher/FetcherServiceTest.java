@@ -10,7 +10,6 @@ import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.any;
 import static org.hamcrest.Matchers.emptyOrNullString;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
@@ -41,9 +40,10 @@ public class FetcherServiceTest {
         discountCode.setAvailable(true);
         discountCode.setCode("Gi1uFPmlqd");
 
-        when(discountCodeRepository.findFirstAvailableTrueByCompanyId(anyLong())).thenReturn(discountCode);
+        when(discountCodeRepository.findFirstByCompanyIdAndAvailableTrue(anyLong())).thenReturn(discountCode);
         String string = discountCodeFetcherService.fetchDiscountCode(request);
         assertThat(string, not(emptyOrNullString()));
         assertThat(string.length(), is(10));
+        assertThat(discountCode.isAvailable(), is(false));
     }
 }

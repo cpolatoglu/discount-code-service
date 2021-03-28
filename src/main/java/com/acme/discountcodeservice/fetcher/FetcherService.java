@@ -1,5 +1,6 @@
 package com.acme.discountcodeservice.fetcher;
 
+import com.acme.discountcodeservice.entity.DiscountCode;
 import com.acme.discountcodeservice.repository.DiscountCodeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,10 @@ public class FetcherService {
     DiscountCodeRepository discountCodeRepository;
 
     public String fetchDiscountCode(FetchRequest request) {
-        return discountCodeRepository.findFirstAvailableTrueByCompanyId(request.getCompanyId()).getCode();
+        DiscountCode discountCode = discountCodeRepository.findFirstByCompanyIdAndAvailableTrue(request.getCompanyId());
+        discountCode.setAvailable(false);
+        discountCodeRepository.save(discountCode);
+
+        return discountCode.getCode();
     }
 }

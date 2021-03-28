@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DiscountCodeRepository extends JpaRepository<DiscountCode, Long> {
-    DiscountCode findFirstAvailableTrueByCompanyId(long id);
+    DiscountCode findFirstByCompanyIdAndAvailableTrue(long id);
 }
