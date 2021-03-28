@@ -1,18 +1,33 @@
 package com.acme.discountcodeservice.generator;
 
+import com.acme.discountcodeservice.repository.DiscountCodeRepository;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Spy;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 public class GeneratorServiceTest {
 
-    GeneratorService codeGeneratorService = new GeneratorService();
+    @Mock
+    DiscountCodeRepository repository;
+
+    @Spy
+    @InjectMocks
+    GeneratorService codeGeneratorService;
 
     @Test
     public void testCodeGeneration() {
+        when(repository.saveAll(any())).thenReturn(null);
         GeneratorRequest request = new GeneratorRequest();
         request.setDiscountAmount(100);
         request.setNumberOfCodes(20);

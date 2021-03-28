@@ -20,6 +20,7 @@ public class GeneratorControllerTest {
     @Test
     void testGeneratorController() {
         GeneratorRequest request = new GeneratorRequest();
+        request.setCompanyId(1);
         request.setDiscountAmount(100);
         request.setNumberOfCodes(20);
         request.setPercentage(false);
