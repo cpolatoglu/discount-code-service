@@ -1,6 +1,7 @@
 package com.acme.discountcodeservice.fetcher;
 
 import com.acme.discountcodeservice.entity.DiscountCode;
+import com.acme.discountcodeservice.repository.CustomerDiscountRepository;
 import com.acme.discountcodeservice.repository.CustomerRepository;
 import com.acme.discountcodeservice.repository.DiscountCodeRepository;
 import org.junit.jupiter.api.Test;
@@ -25,6 +26,9 @@ class FetcherServiceTest {
 
     @Mock
     CustomerRepository customerRepository;
+
+    @Mock
+    CustomerDiscountRepository customerDiscountRepository;
 
     @Spy
     @InjectMocks

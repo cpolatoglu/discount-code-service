@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: '004'
+      author: caglar.polatoglu
+      changes:
+        - createTable:
+            tableName: customer_discount
+            columns:
+              - column:
+                  name: company_id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: fk_company
+                    references: company(id)
+              - column:
+                  name: customer_id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: fk_customer
+                    references: customer(id)
+              - column:
+                  name: discount_code
+                  type: varchar(10)
+                  constraints:
+                    nullable: false

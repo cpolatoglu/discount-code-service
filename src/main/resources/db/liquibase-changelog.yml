@@ -8,3 +8,6 @@ databaseChangeLog:
   - include:
       file: changelog/003-customer-table.yml
       relativeToChangelogFile: true
+  - include:
+      file: changelog/004-customer-discount-table.yml
+      relativeToChangelogFile: true
